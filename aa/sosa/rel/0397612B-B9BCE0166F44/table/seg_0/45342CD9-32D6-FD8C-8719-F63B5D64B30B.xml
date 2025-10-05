@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45342CD9-32D6-FD8C-8719-F63B5D64B30B" name="Det_Prod_Cat">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>719881B9-8423-E91C-36CA-FD284329CF95</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<abbreviation>DPC</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Det_Cat_Prod" id="9EF01BFD-DAD5-50E6-EF5B-5ABCA937612A">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>9CA0E541-3595-DADE-0692-069181FC06B2</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Id_Producto" id="3D7FBD14-7463-80F0-29FA-6C1FFE82C142">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>D2EC2EF8-A97B-8358-A89B-811B4A67604A</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Id_Categoria" id="D6891C5F-D921-B1DC-1397-59FC40CA8696">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>4D4D94E3-D68A-BA82-7E0E-A08D9C1FF99D</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Productos_Id_Producto" id="4179CBA2-C3AB-A84A-2BEA-5591A8FD16FE">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>42868BB5-B765-B4A0-3397-0F36B2815DAF</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="618DBFED-0D55-345C-1459-83BD7E9EAB5B" referredColumn="97347106-CCFD-768C-454D-B8427EF3FBB1"/>
+</associations>
+</Column>
+<Column name="Categorias_Id_Categoria" id="4EA4C214-68E5-CCF3-5024-6E3FD85F84A1">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>3B4A3BE4-71E0-55C5-1322-78ED08A6AB73</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6E3E227-7533-4509-F346-3C616FD0869A" referredColumn="6B3759C9-DEBA-E1DE-A066-AE7B1C63B45E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6BF5BFA-0640-CBA7-63AC-2C94E7D04636" name="Detalle_Producto_Categoria_PK">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>056938BE-5DD1-B242-426A-FCA64FAC5676</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EF01BFD-DAD5-50E6-EF5B-5ABCA937612A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5C34B0D6-0F39-7B08-F2D7-1E624FD2CA0B" name="Det_Prod_Cat_Productos_FK">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>7D8D5BB8-2EE0-3AEB-88D9-EEE867A26051</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4179CBA2-C3AB-A84A-2BEA-5591A8FD16FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E20A3DFB-D4EA-32AA-BB70-DF62D1BF0BAD" name="Det_Prod_Cat_Categorias_FK">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>E4701593-8A6F-20D0-64E1-0C62ADE475BD</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EA4C214-68E5-CCF3-5024-6E3FD85F84A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="961F0DFE-61C4-E213-E94D-0FC3CF77525E" name="Clientes">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>3862AF25-C0E2-E436-5038-13D3656B3A05</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<abbreviation>CL</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_Cliente" id="AE54D17E-8A8B-08F4-C36C-56CCCAE27194">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>685DB327-8796-38B7-187D-899C1EB306C2</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="A204B980-C1E4-41A1-1819-8DA7749CF042">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>80EB3DC3-3F9A-16A3-E598-BDC65A8D3A58</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido" id="CDF4489A-409E-2BD6-3525-5006F836364B">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>6CB01012-C762-13CB-BC97-D8E5E058F1BE</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="3212D723-00A2-70F7-1A6C-F5EADDE91BED">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>2F3011D0-749C-EDB8-2046-C175A8456AFD</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="04753018-43A4-BBE7-230F-E63A87FFE4D3">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>AFF478BE-CCA8-5A34-A6B1-9FF6DFEEDB4E</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT035</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>12 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="24145539-14F2-1DB6-FB2B-167399CE2E47" name="Clientes_PK">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:31:52 UTC</createdTime>
+<generatorID>99D7F79E-0773-811A-A072-1ECC5668BC3C</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE54D17E-8A8B-08F4-C36C-56CCCAE27194"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

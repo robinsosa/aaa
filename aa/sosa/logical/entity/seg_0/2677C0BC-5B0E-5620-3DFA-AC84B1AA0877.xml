@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2677C0BC-5B0E-5620-3DFA-AC84B1AA0877" name="Detalle_Pedido">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:42:36 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>DP</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_Detalle" id="B4ABE8BC-AD48-BE06-40CB-F4905BA3C2A3">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:43:06 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Pedido" id="28C6E31E-ED4E-B065-2ECD-E558408948AE">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:45:06 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Producto" id="D81BCEAA-2024-6E6E-7A4F-AAA3A88FA822">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:45:52 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad" id="C0AA301F-D39C-B531-AF25-A04ABD37DCFC">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:46:22 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Precio_unitario" id="61E00B4B-4454-953D-76F9-46FA2CFD0EE5">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:47:00 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<ownDataTypeParameters>,5,10</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Pedido1" id="E632A95B-6649-D1F1-C719-55521E76A41C">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:03:59 UTC</createdTime>
+<generatorID>69009034-F3F2-76BE-2DC1-15D50C0F1257</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<referedAttribute>694D381D-D8E7-07EF-1B47-D21859FF5732</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_Producto1" id="93C7CF87-5AED-8B9D-67FC-5D53AFFD07D7">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 14:09:09 UTC</createdTime>
+<generatorID>D27AD66D-E89A-3C8A-01E7-838902B88123</generatorID>
+<ownerDesignName>sosa</ownerDesignName>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="true"/>
+</engineerTo>
+<referedAttribute>6F8D0688-4FBF-04D8-C62B-67FE7FCCB828</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="33599DDB-225A-1CDE-FF32-E30D8B5D7F8D" name="Detalle_Pedido PK">
+<createdBy>Desarrollador</createdBy>
+<createdTime>2025-10-05 13:45:02 UTC</createdTime>
+<ownerDesignName>sosa</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0397612B-B81E-ED40-13FE-B9BCE0166F44" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B4ABE8BC-AD48-BE06-40CB-F4905BA3C2A3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
