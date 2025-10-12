@@ -1,0 +1,47 @@
+-- Tabla Autor
+CREATE TABLE Autor (
+    id_autor INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    nacionalidad VARCHAR(50),
+    fecha_nac DATE
+);
+
+-- Tabla Libro
+CREATE TABLE Libro (
+    id_libro INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(200) NOT NULL,
+    isbn VARCHAR(13) UNIQUE NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    año_public INT,
+    id_autor INT,
+    FOREIGN KEY (id_autor) REFERENCES Autor(id_autor)
+);
+
+-- Tabla Cliente
+CREATE TABLE Cliente (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    telefono VARCHAR(15)
+);
+
+-- Tabla Transacción
+CREATE TABLE Transaccion (
+    id_trans INT PRIMARY KEY AUTO_INCREMENT,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    forma_pago VARCHAR(20) NOT NULL,
+    total DECIMAL(10,2),
+    id_cliente INT,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+);
+
+-- Tabla Detalle_Transaccion (tabla intermedia)
+CREATE TABLE Detalle_Transaccion (
+    id_detalle INT PRIMARY KEY AUTO_INCREMENT,
+    id_trans INT,
+    id_libro INT,
+    cantidad INT NOT NULL DEFAULT 1,
+    precio_venta DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_trans) REFERENCES Transaccion(id_trans),
+    FOREIGN KEY (id_libro) REFERENCES Libro(id_libro)
+);
