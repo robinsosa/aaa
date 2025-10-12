@@ -1,47 +1,135 @@
--- Tabla Autor
-CREATE TABLE Autor (
-    id_autor INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    nacionalidad VARCHAR(50),
-    fecha_nac DATE
-);
+CREATE TABLE AUTOR 
+    ( 
+     ID_Autor       INTEGER  NOT NULL , 
+     Nombre_Autor   NVARCHAR2 (50)  NOT NULL , 
+     Apellido_Autor NVARCHAR2 (50)  NOT NULL , 
+     Fecha_Nacimi   DATE  NOT NULL , 
+     Lugar_Natal    NVARCHAR2 (100)  NOT NULL 
+    ) 
+;
 
--- Tabla Libro
-CREATE TABLE Libro (
-    id_libro INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(200) NOT NULL,
-    isbn VARCHAR(13) UNIQUE NOT NULL,
-    precio DECIMAL(10,2) NOT NULL,
-    año_public INT,
-    id_autor INT,
-    FOREIGN KEY (id_autor) REFERENCES Autor(id_autor)
-);
+ALTER TABLE AUTOR 
+    ADD CONSTRAINT AUTOR_PK PRIMARY KEY ( ID_Autor ) ;
 
--- Tabla Cliente
-CREATE TABLE Cliente (
-    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100),
-    telefono VARCHAR(15)
-);
+CREATE TABLE CLIENTE 
+    ( 
+     ID_Cliente       INTEGER  NOT NULL , 
+     Nombre_Cliente   NVARCHAR2 (70)  NOT NULL , 
+     Apellido_Cliente NVARCHAR2 (70)  NOT NULL , 
+     Email            NVARCHAR2 (100) , 
+     Telefono         NCHAR (12)  NOT NULL 
+    ) 
+;
 
--- Tabla Transacción
-CREATE TABLE Transaccion (
-    id_trans INT PRIMARY KEY AUTO_INCREMENT,
-    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
-    forma_pago VARCHAR(20) NOT NULL,
-    total DECIMAL(10,2),
-    id_cliente INT,
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
-);
+ALTER TABLE CLIENTE 
+    ADD CONSTRAINT CLIENTE_PK PRIMARY KEY ( ID_Cliente ) ;
 
--- Tabla Detalle_Transaccion (tabla intermedia)
-CREATE TABLE Detalle_Transaccion (
-    id_detalle INT PRIMARY KEY AUTO_INCREMENT,
-    id_trans INT,
-    id_libro INT,
-    cantidad INT NOT NULL DEFAULT 1,
-    precio_venta DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (id_trans) REFERENCES Transaccion(id_trans),
-    FOREIGN KEY (id_libro) REFERENCES Libro(id_libro)
-);
+CREATE TABLE DETAL_TRANSA 
+    ( 
+     ID_Delt_Transac          INTEGER  NOT NULL , 
+     ID_Transa                INTEGER , 
+     ID_Forma_pago            INTEGER , 
+     ID_Libro                 INTEGER , 
+     Cantidad                 INTEGER  NOT NULL , 
+     Precio_Total             INTEGER  NOT NULL , 
+     LIBRO_ID_Libro           INTEGER  NOT NULL , 
+     TRANSACCION_ID_transac   INTEGER  NOT NULL , 
+     FORMA_PAGO_ID_Forma_pago INTEGER  NOT NULL 
+    ) 
+;
+
+ALTER TABLE DETAL_TRANSA 
+    ADD CONSTRAINT DETAL_TRANSA_PK PRIMARY KEY ( ID_Delt_Transac ) ;
+
+CREATE TABLE FORMA_PAGO 
+    ( 
+     ID_Forma_pago INTEGER  NOT NULL , 
+     Tarjeta       INTEGER , 
+     Yape          INTEGER , 
+     Plin          INTEGER 
+    ) 
+;
+
+ALTER TABLE FORMA_PAGO 
+    ADD CONSTRAINT FORMA_PAGO_PK PRIMARY KEY ( ID_Forma_pago ) ;
+
+CREATE TABLE LIBRO 
+    ( 
+     ID_Libro       INTEGER  NOT NULL , 
+     Titulo         NVARCHAR2 (100)  NOT NULL , 
+     Precio         NUMBER (2,10)  NOT NULL , 
+     Fecha_Publi    DATE  NOT NULL , 
+     AUTOR_ID_Autor INTEGER  NOT NULL 
+    ) 
+;
+
+ALTER TABLE LIBRO 
+    ADD CONSTRAINT LIBRO_PK PRIMARY KEY ( ID_Libro ) ;
+
+CREATE TABLE TRANSACCION 
+    ( 
+     ID_transac         INTEGER  NOT NULL , 
+     Fecha_Transa       DATE  NOT NULL , 
+     Total              INTEGER  NOT NULL , 
+     CLIENTE_ID_Cliente INTEGER  NOT NULL 
+    ) 
+;
+
+ALTER TABLE TRANSACCION 
+    ADD CONSTRAINT TRANSACCION_PK PRIMARY KEY ( ID_transac ) ;
+
+ALTER TABLE DETAL_TRANSA 
+    ADD CONSTRAINT DETAL_TRANSA_FORMA_PAGO_FK FOREIGN KEY 
+    ( 
+     FORMA_PAGO_ID_Forma_pago
+    ) 
+    REFERENCES FORMA_PAGO 
+    ( 
+     ID_Forma_pago
+    ) 
+;
+
+ALTER TABLE DETAL_TRANSA 
+    ADD CONSTRAINT DETAL_TRANSA_LIBRO_FK FOREIGN KEY 
+    ( 
+     LIBRO_ID_Libro
+    ) 
+    REFERENCES LIBRO 
+    ( 
+     ID_Libro
+    ) 
+;
+
+ALTER TABLE DETAL_TRANSA 
+    ADD CONSTRAINT DETAL_TRANSA_TRANSACCION_FK FOREIGN KEY 
+    ( 
+     TRANSACCION_ID_transac
+    ) 
+    REFERENCES TRANSACCION 
+    ( 
+     ID_transac
+    ) 
+;
+
+ALTER TABLE LIBRO 
+    ADD CONSTRAINT LIBRO_AUTOR_FK FOREIGN KEY 
+    ( 
+     AUTOR_ID_Autor
+    ) 
+    REFERENCES AUTOR 
+    ( 
+     ID_Autor
+    ) 
+;
+
+ALTER TABLE TRANSACCION 
+    ADD CONSTRAINT TRANSACCION_CLIENTE_FK FOREIGN KEY 
+    ( 
+     CLIENTE_ID_Cliente
+    ) 
+    REFERENCES CLIENTE 
+    ( 
+     ID_Cliente
+    ) 
+;
+
