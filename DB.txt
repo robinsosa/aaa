@@ -1,0 +1,145 @@
+CREATE TABLE ECOM_CATEGORIA 
+    ( 
+     ID_Categoria      INTEGER  NOT NULL , 
+     Nombre_Categoria  NVARCHAR2 (99)  NOT NULL , 
+     Descripcion_Categ NVARCHAR2 (200) 
+    ) 
+;
+
+ALTER TABLE ECOM_CATEGORIA 
+    ADD CONSTRAINT ECOM_CATEGORIA_PK PRIMARY KEY ( ID_Categoria ) ;
+
+CREATE TABLE ECOM_CLIENTE 
+    ( 
+     ID_Cliente       INTEGER  NOT NULL , 
+     Nombre_Cliente   NVARCHAR2 (50)  NOT NULL , 
+     Apellido_Cliente NVARCHAR2 (60)  NOT NULL , 
+     Email            NVARCHAR2 (100)  NOT NULL , 
+     Direccion        NVARCHAR2 (100)  NOT NULL , 
+     Telefono         NCHAR (12)  NOT NULL , 
+     Fecha_registro   DATE  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ECOM_CLIENTE 
+    ADD CONSTRAINT ECOM_CLIENTE_PK PRIMARY KEY ( ID_Cliente ) ;
+
+CREATE TABLE ECOM_DETAL_PEDI 
+    ( 
+     ID_Detalle                INTEGER  NOT NULL , 
+     ECOM_PEDIDO_ID_Pedido     INTEGER  NOT NULL , 
+     ECOM_PRODUCTO_ID_Producto INTEGER  NOT NULL , 
+     Cantidad                  INTEGER  NOT NULL , 
+     Precio_Unitario           NUMBER (10,2)  NOT NULL , 
+     Sub_Total                 NUMBER (10,2)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ECOM_DETAL_PEDI 
+    ADD CONSTRAINT ECOM_DETAL_PEDI_PK PRIMARY KEY ( ID_Detalle ) ;
+
+CREATE TABLE ECOM_INVENTARIO 
+    ( 
+     ID_Inventario             INTEGER  NOT NULL , 
+     ECOM_PRODUCTO_ID_Producto INTEGER  NOT NULL , 
+     Cantidad_Disponible       INTEGER  NOT NULL , 
+     Stock_Minimo              INTEGER  NOT NULL 
+    ) 
+;
+
+CREATE UNIQUE INDEX ECOM_INVENTARIO__IDX ON ECOM_INVENTARIO 
+    ( 
+     ECOM_PRODUCTO_ID_Producto ASC 
+    ) 
+;
+
+ALTER TABLE ECOM_INVENTARIO 
+    ADD CONSTRAINT ECOM_INVENTAR_PK PRIMARY KEY ( ID_Inventario ) ;
+
+CREATE TABLE ECOM_PEDIDO 
+    ( 
+     ID_Pedido               INTEGER  NOT NULL , 
+     ECOM_CLIENTE_ID_Cliente INTEGER  NOT NULL , 
+     Fecha_Pedido            DATE  NOT NULL , 
+     Total                   NUMBER (10,2)  NOT NULL , 
+     Direccion_Entrega       NVARCHAR2 (200)  NOT NULL , 
+     Estado                  NVARCHAR2 (20)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ECOM_PEDIDO 
+    ADD CONSTRAINT ECOM_PEDIDO_PK PRIMARY KEY ( ID_Pedido ) ;
+
+CREATE TABLE ECOM_PRODUCTO 
+    ( 
+     ID_Producto                 INTEGER  NOT NULL , 
+     ECOM_CATEGORIA_ID_Categoria INTEGER  NOT NULL , 
+     Nombre_Producto             NVARCHAR2 (150)  NOT NULL , 
+     Descripcion                 NVARCHAR2 (200) , 
+     Precio                      NUMBER (10,2)  NOT NULL , 
+     Marca                       NVARCHAR2 (50) 
+    ) 
+;
+
+ALTER TABLE ECOM_PRODUCTO 
+    ADD CONSTRAINT ECOM_PRODUCTO_PK PRIMARY KEY ( ID_Producto ) ;
+
+ALTER TABLE ECOM_DETAL_PEDI 
+    ADD CONSTRAINT ECOM_DETAL_PEDI_ECOM_PEDID_FK FOREIGN KEY 
+    ( 
+     ECOM_PEDIDO_ID_Pedido
+    ) 
+    REFERENCES ECOM_PEDIDO 
+    ( 
+     ID_Pedido
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE ECOM_DETAL_PEDI 
+    ADD CONSTRAINT ECOM_DETAL_PEDID_ECOM_PRODU_FK FOREIGN KEY 
+    ( 
+     ECOM_PRODUCTO_ID_Producto
+    ) 
+    REFERENCES ECOM_PRODUCTO 
+    ( 
+     ID_Producto
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE ECOM_INVENTARIO 
+    ADD CONSTRAINT ECOM_INVENT_ECOM_PRODU_FK FOREIGN KEY 
+    ( 
+     ECOM_PRODUCTO_ID_Producto
+    ) 
+    REFERENCES ECOM_PRODUCTO 
+    ( 
+     ID_Producto
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE ECOM_PEDIDO 
+    ADD CONSTRAINT ECOM_PEDIDO_ECOM_CLIENTE_FK FOREIGN KEY 
+    ( 
+     ECOM_CLIENTE_ID_Cliente
+    ) 
+    REFERENCES ECOM_CLIENTE 
+    ( 
+     ID_Cliente
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE ECOM_PRODUCTO 
+    ADD CONSTRAINT ECOM_PRODU_ECOM_CATEG_FK FOREIGN KEY 
+    ( 
+     ECOM_CATEGORIA_ID_Categoria
+    ) 
+    REFERENCES ECOM_CATEGORIA 
+    ( 
+     ID_Categoria
+    ) 
+    ON DELETE CASCADE 
+;
