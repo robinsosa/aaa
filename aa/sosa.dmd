@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="sosa" id="14FB9EDC-E841-0397-1521-892D063745EA" version="3.5">
-<createdBy>Desarrollador</createdBy>
-<createdTime>2025-10-05 13:13:37 UTC</createdTime>
-<ownerDesignName>sosa</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>14FB9EDC-E841-0397-1521-892D063745EA</designId>
-</OSDM_Design>
